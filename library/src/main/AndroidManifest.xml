@@ -56,5 +56,6 @@
 
         <service android:name=".services.WallpaperBoardService"
             android:stopWithTask="false"/>
+
     </application>
 </manifest>
