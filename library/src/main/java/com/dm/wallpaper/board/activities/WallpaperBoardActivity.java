@@ -345,10 +345,10 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
                         R.color.navigation_view_item_highlight_dark :
                         R.color.navigation_view_item_highlight);
 
-        MenuItem menuItem = mNavigationView.getMenu().findItem(R.id.navigation_view_donate);
-        if (menuItem != null) {
+        /*MenuItem menuItem = mNavigationView.getMenu().findItem(R.id.navigation_view_donate);
+            if (menuItem != null) {
             menuItem.setVisible(getResources().getBoolean(R.bool.enable_donation));
-        }
+        } */
 
         mNavigationView.setItemTextColor(colorStateList);
         mNavigationView.setItemIconTintList(colorStateList);
@@ -363,8 +363,8 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
             else if (id == R.id.navigation_view_favorites) mPosition = 1;
             else if (id == R.id.navigation_view_settings) mPosition = 2;
             else if (id == R.id.navigation_view_about) mPosition = 3;
-            else if (id == R.id.navigation_view_donate) mPosition = 4;
-            else if (id == R.id.navigation_view_share) {
+            //else if (id == R.id.navigation_view_donate) mPosition = 4;
+         /*   else if (id == R.id.navigation_view_share) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.share_app_subject,
@@ -381,7 +381,7 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                 startActivity(intent);
                 return false;
-            }
+            } */
 
             item.setChecked(true);
             mDrawerLayout.closeDrawers();
