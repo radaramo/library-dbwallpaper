@@ -362,7 +362,7 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
             if (id == R.id.navigation_view_wallpapers) mPosition = 0;
             else if (id == R.id.navigation_view_favorites) mPosition = 1;
             else if (id == R.id.navigation_view_settings) mPosition = 2;
-            else if (id == R.id.navigation_view_about) mPosition = 3;
+            //else if (id == R.id.navigation_view_about) mPosition = 3;
             //else if (id == R.id.navigation_view_donate) mPosition = 4;
          /*   else if (id == R.id.navigation_view_share) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
