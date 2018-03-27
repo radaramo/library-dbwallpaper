@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="idaplicacion">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="intersticial1">ca-app-pub-3940256099942544/1033173712</string>
+
     <!-- Navigation View -->
     <string name="navigation_view_wallpapers">Wallpapers</string>
     <string name="navigation_view_favorites">Favorites</string>
