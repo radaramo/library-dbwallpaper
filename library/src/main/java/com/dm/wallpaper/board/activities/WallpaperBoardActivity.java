@@ -66,9 +66,6 @@ import com.dm.wallpaper.board.utils.InAppBillingProcessor;
 import com.dm.wallpaper.board.utils.listeners.InAppBillingListener;
 import com.dm.wallpaper.board.utils.listeners.NavigationListener;
 import com.dm.wallpaper.board.utils.views.HeaderView;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
@@ -114,8 +111,6 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
 
     private ActivityConfiguration mConfig;
 
-    private InterstitialAd mInterstitialAd;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.setTheme(Preferences.get(this).isDarkTheme() ?
@@ -124,16 +119,6 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
         setContentView(R.layout.activity_wallpaper_board);
         ButterKnife.bind(this);
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.intersticial1));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                displayInterstitial();
-            }
-        });
 
         startService(new Intent(this, WallpaperBoardService.class));
 
@@ -206,11 +191,6 @@ public abstract class WallpaperBoardActivity extends AppCompatActivity implement
         }
     }
 
-    public void displayInterstitial() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        }
-    }
     @Override
     protected void attachBaseContext(Context newBase) {
         LocaleHelper.setLocale(newBase);
